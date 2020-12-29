@@ -40,9 +40,11 @@
 
                         <div class="row">
                             <div class="col-6">
+                                <label for="">NIK</label>
                                 <input type="text" name="siswa[NIK]" class="form-control" placeholder="NIK" value="<?= $data['NIK'] ?>">
                             </div>
                             <div class="col-6">
+                                <label for="">NIS</label>
                                 <input type="text" name="siswa[NIS]" class="form-control" placeholder="NIS" value="<?= $data['NIS'] ?>">
                             </div>
                         </div>
@@ -51,6 +53,7 @@
 
                         <div class="row">
                             <div class="col">
+                                <label for="">Nama Lengkap</label>
                                 <input type="text" name="siswa[nama_lengkap]" class="form-control" placeholder="Nama Lengkap" value="<?= $data['nama_lengkap'] ?>">
                             </div>
                         </div>
@@ -59,6 +62,7 @@
 
                         <div class="row">
                             <div class="col-6">
+                                <label for="">Jenis Kelamin</label>
                                 <select name="siswa[jenis_kelamin]" class="form-control">
                                     <option value="" disabled selected>- Pilih Jenis Kelamin -</option>
                                     <option value="Laki-laki" <?= $data['jenis_kelamin'] == 'Laki-laki' ? 'selected' : '' ?>>Laki-laki</option>
@@ -66,6 +70,7 @@
                                 </select>
                             </div>
                             <div class="col-6">
+                                <label for="">Agama</label>
                                 <select name="siswa[agama]" class="form-control">
                                     <option value="" disabled selected>- Pilih Agama -</option>
                                     <option value="Islam" <?= $data['agama'] == 'Islam' ? 'selected' : '' ?>>Islam</option>
@@ -82,6 +87,7 @@
 
                         <div class="row">
                             <div class="col-6">
+                                <label for="">Tahun</label>
                                 <select name="siswa[tahun_id]" class="form-control">
                                     <option value="" disabled selected>- Pilih Tahun -</option>
                                     <?php foreach ($tahun as $t) : ?>
@@ -90,6 +96,7 @@
                                 </select>
                             </div>
                             <div class="col-6">
+                                <label for="">Gelombang</label>
                                 <select name="siswa[gelombang_id]" class="form-control">
                                     <option value="" disabled selected>- Pilih Gelombang -</option>
                                     <?php foreach ($gelombang as $t) : ?>
@@ -103,6 +110,7 @@
 
                         <div class="row">
                             <div class="col-6">
+                                <label for="">Jurusan</label>
                                 <select name="siswa[jurusan_id]" class="form-control">
                                     <option value="" disabled selected>- Pilih Jurusan -</option>
                                     <?php foreach ($jurusan as $t) : ?>
@@ -111,6 +119,7 @@
                                 </select>
                             </div>
                             <div class="col-6">
+                                <label for="">Status</label>
                                 <select name="siswa[status]" class="form-control">
                                     <option value="" disabled selected>- Pilih Status -</option>
                                     <option value="Lulus" <?= $data['status'] == 'Lulus' ? 'selected' : '' ?>>Lulus</option>
@@ -123,9 +132,11 @@
 
                         <div class="row">
                             <div class="col-6">
+                                <label for="">Tempat Lahir</label>
                                 <input type="text" name="siswa[tempat_lahir]" class="form-control" placeholder="Tempat Lahir" value="<?= $data['tempat_lahir'] ?>">
                             </div>
                             <div class="col-6">
+                                <label for="">Tanggal Lahir</label>
                                 <input type="text" name="siswa[tanggal_lahir]" class="form-control" placeholder="Tanggal Lahir" value="<?= $data['tanggal_lahir'] ?>" onfocus="(this.type='date')">
                             </div>
                         </div>
@@ -134,9 +145,11 @@
 
                         <div class="row">
                             <div class="col-6">
+                                <label for="">Tinggal Dengan</label>
                                 <input type="text" name="siswa[tinggal_dengan]" class="form-control" placeholder="Tinggal Dengan" value="<?= $data['tinggal_dengan'] ?>">
                             </div>
                             <div class="col-6">
+                                <label for="">No Telepon</label>
                                 <input type="text" name="siswa[no_telepon]" class="form-control" placeholder="Nomor Telepon" value="<?= $data['no_telepon'] ?>">
                             </div>
                         </div>
@@ -145,12 +158,14 @@
 
                         <div class="row">
                             <div class="col-6">
+                                <label for="">Jumlah Pembayaran</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend"><span class="input-group-text">Rp.</span></div>
                                     <input type="text" name="siswa[jumlah_pembayaran]" class="form-control" placeholder="Jumlah Pembayaran" value="<?= $data['jumlah_pembayaran'] ?>">
                                 </div>
                             </div>
                             <div class="col-6">
+                                <label for="">Status Pembayaran</label>
                                 <select name="siswa[status_pembayaran]" class="form-control">
                                     <option value="" disabled selected>- Pilih Status Pembayaran -</option>
                                     <option value="Lunas" <?= $data['status_pembayaran'] == 'Lunas' ? 'selected' : '' ?>>Lunas</option>
@@ -163,15 +178,17 @@
 
                         <div class="row">
                             <div class="col-6">
+                                <label for="">Anak Ke</label>
                                 <input type="text" name="siswa[anak_ke]" class="form-control" placeholder="Anak Ke" value="<?= $data['anak_ke'] ?>">
                             </div>
                             <div class="col-6">
+                                <label for="">Jumlah Saudara</label>
                                 <input type="text" name="siswa[jumlah_saudara]" class="form-control" placeholder="Jumlah Saudara Kandung" value="<?= $data['jumlah_saudara'] ?>">
                             </div>
                         </div>
 
                         <br>
-
+                        <label for="">Alamat LEngkap</label>
                         <textarea name="siswa[alamat]" rows="5" class="form-control" placeholder="Alamat Lengkap"><?= $data['alamat'] ?></textarea>
 
                     </div>
@@ -195,9 +212,11 @@
 
                                 <div class="row">
                                     <div class="col-6">
+                                        <label for="">Nama Lengkap</label>
                                         <input type="text" name="ayah[nama_lengkap]" class="form-control" placeholder="Nama Lengkap" value="<?= $ayah['nama_lengkap'] ?>">
                                     </div>
                                     <div class="col-6">
+                                        <label for="">Agama</label>
                                         <select name="ayah[agama]" class="form-control">
                                             <option value="" disabled selected>- Pilih Agama -</option>
                                             <option value="Islam" <?= $ayah['agama'] == 'Islam' ? 'selected' : '' ?>>Islam</option>
@@ -214,6 +233,7 @@
 
                                 <div class="row">
                                     <div class="col-6">
+                                        <label for="">Pendidikan Terakhir</label>
                                         <select name="ayah[pendidikan_terakhir]" class="form-control">
                                             <option value="" disabled selected>- Pendidikan Terkahir -</option>
                                             <option value="SMA" <?= $ayah['pendidikan_terakhir'] == 'SMA' ? 'selected' : '' ?>>SMA</option>
@@ -222,6 +242,7 @@
                                         </select>
                                     </div>
                                     <div class="col-6">
+                                        <label for="">Penghasilan</label>
                                         <select name="ayah[penghasilan]" class="form-control">
                                             <option value="" disabled selected>- Penghasilan per Bulan -</option>
                                             <option value="( kurang dari ) 500.000" <?= $ayah['penghasilan'] == '( kurang dari ) 500.000' ? 'selected' : '' ?>>( kurang dari ) 500.000</option>
@@ -235,9 +256,11 @@
 
                                 <div class="row">
                                     <div class="col-6">
+                                        <label for="">Pekerjaan</label>
                                         <input type="text" name="ayah[pekerjaan]" class="form-control" placeholder="Pekerjaan" value="<?= $ayah['pekerjaan'] ?>">
                                     </div>
                                     <div class="col-6">
+                                        <label for="">Nama Instansi</label>
                                         <input type="text" name="ayah[nama_instansi]" class="form-control" placeholder="Nama Instansi" value="<?= $ayah['nama_instansi'] ?>">
                                     </div>
                                 </div>
@@ -246,9 +269,11 @@
 
                                 <div class="row">
                                     <div class="col-6">
+                                        <label for="">Jabatan</label>
                                         <input type="text" name="ayah[jabatan]" class="form-control" placeholder="Jabatan" value="<?= $ayah['jabatan'] ?>">
                                     </div>
                                     <div class="col-6">
+                                        <label for="">No Telepon Kantor</label>
                                         <input type="text" name="ayah[no_telepon_kantor]" class="form-control" placeholder="Telepon Kantor" value="<?= $ayah['no_telepon_kantor'] ?>">
                                     </div>
                                 </div>
@@ -257,19 +282,21 @@
 
                                 <div class="row">
                                     <div class="col-6">
+                                        <label for="">No Telepon</label>
                                         <input type="text" name="ayah[no_telepon]" class="form-control" placeholder="Telepon Rumah / HP" value="<?= $ayah['no_telepon'] ?>">
                                     </div>
                                     <div class="col-6">
+                                        <label for="">Email</label>
                                         <input type="text" name="ayah[email]" class="form-control" placeholder="Email" value="<?= $ayah['email'] ?>">
                                     </div>
                                 </div>
 
                                 <br>
-
+                                <label for="">Alamat Kantor</label>
                                 <textarea name="ayah[alamat_kantor]" rows="5" class="form-control" placeholder="Alamat Kantor"><?= $ayah['alamat_kantor'] ?></textarea>
 
                                 <br>
-
+                                <label for="">Alamat Rumah</label>
                                 <textarea name="ayah[alamat_rumah]" rows="5" class="form-control" placeholder="Alamat Rumah"><?= $ayah['alamat_rumah'] ?></textarea>
                             </div>
                         </div>
@@ -296,9 +323,11 @@
 
                         <div class="row">
                             <div class="col-6">
+                                <label for="">Nama Lengkap</label>
                                 <input type="text" name="ibu[nama_lengkap]" class="form-control" placeholder="Nama Lengkap" value="<?= $ibu['nama_lengkap'] ?>">
                             </div>
                             <div class="col-6">
+                                <label for="">Agama</label>
                                 <select name="ibu[agama]" class="form-control">
                                     <option value="" disabled selected>- Pilih Agama -</option>
                                     <option value="Islam" <?= $ibu['agama'] == 'Islam' ? 'selected' : '' ?>>Islam</option>
@@ -315,6 +344,7 @@
 
                         <div class="row">
                             <div class="col-6">
+                                <label for="">Pendidikan Terakhir</label>
                                 <select name="ibu[pendidikan_terakhir]" class="form-control">
                                     <option value="" disabled selected>- Pendidikan Terkahir -</option>
                                     <option value="SMA" <?= $ibu['pendidikan_terakhir'] == 'SMA' ? 'selected' : '' ?>>SMA</option>
@@ -323,6 +353,7 @@
                                 </select>
                             </div>
                             <div class="col-6">
+                                <label for="">Penghasilan</label>
                                 <select name="ibu[penghasilan]" class="form-control">
                                     <option value="" disabled selected>- Penghasilan per Bulan -</option>
                                     <option value="( kurang dari ) 500.000" <?= $ibu['penghasilan'] == '( kurang dari ) 500.000' ? 'selected' : '' ?>>( kurang dari ) 500.000</option>
@@ -336,9 +367,11 @@
 
                         <div class="row">
                             <div class="col-6">
+                                <label for="">Pekerjaan</label>
                                 <input type="text" name="ibu[pekerjaan]" class="form-control" placeholder="Pekerjaan" value="<?= $ibu['pekerjaan'] ?>">
                             </div>
                             <div class="col-6">
+                                <label for="">Nama Instansi</label>
                                 <input type="text" name="ibu[nama_instansi]" class="form-control" placeholder="Nama Instansi" value="<?= $ibu['nama_instansi'] ?>">
                             </div>
                         </div>
@@ -347,9 +380,11 @@
 
                         <div class="row">
                             <div class="col-6">
+                                <label for="">Jabatan</label>
                                 <input type="text" name="ibu[jabatan]" class="form-control" placeholder="Jabatan" value="<?= $ibu['jabatan'] ?>">
                             </div>
                             <div class="col-6">
+                                <label for="">No Telepon Kantor</label>
                                 <input type="text" name="ibu[no_telepon_kantor]" class="form-control" placeholder="Telepon Kantor" value="<?= $ibu['no_telepon_kantor'] ?>">
                             </div>
                         </div>
@@ -358,19 +393,22 @@
 
                         <div class="row">
                             <div class="col-6">
+                                <label for="">No Telepon</label>
                                 <input type="text" name="ibu[no_telepon]" class="form-control" placeholder="Telepon Rumah / HP" value="<?= $ibu['no_telepon'] ?>">
                             </div>
                             <div class="col-6">
+                                <label for="">Email</label>
                                 <input type="text" name="ibu[email]" class="form-control" placeholder="Email" value="<?= $ibu['email'] ?>">
                             </div>
                         </div>
 
                         <br>
 
+                        <label for="">Alamat Kantor</label>
                         <textarea name="ibu[alamat_kantor]" rows="5" class="form-control" placeholder="Alamat Kantor"><?= $ibu['alamat_kantor'] ?></textarea>
 
                         <br>
-
+                        <label for="">Alamat Rumah</label>
                         <textarea name="ibu[alamat_rumah]" rows="5" class="form-control" placeholder="Alamat Rumah"><?= $ibu['alamat_rumah'] ?></textarea>
                     </div>
                 </div>
@@ -395,15 +433,17 @@
 
                         <div class="row">
                             <div class="col-6">
+                                <label for="">Nama Sekolah</label>
                                 <input type="text" name="asal_sekolah[nama]" class="form-control" placeholder="Nama Sekolah" value="<?= $asal_sekolah['nama'] ?>">
                             </div>
                             <div class="col-6">
+                                <label for="">No Telepon Sekolah</label>
                                 <input type="text" name="asal_sekolah[no_telepon]" class="form-control" placeholder="Nomor Telepon Sekolah" value="<?= $asal_sekolah['no_telepon'] ?>">
                             </div>
                         </div>
 
                         <br>
-
+                        <label for="">Alamat</label>
                         <textarea name="asal_sekolah[alamat]" rows="5" class="form-control" placeholder="Alamat Sekolah"><?= $asal_sekolah['alamat'] ?></textarea>
                     </div>
                 </div>
@@ -436,9 +476,11 @@
 
                             <div class="row">
                                 <div class="col-6">
+                                    <label for="">Nilai</label>
                                     <input type="text" name="siswa_nilai[<?= $i ?>][nilai]" class="form-control" placeholder="Nilai" value="<?= $n['nilai'] ?>">
                                 </div>
                                 <div class=" col-6">
+                                    <label for="">Mata Pelajaran</label>
                                     <select name="siswa_nilai[<?= $i ?>][mata_pelajaran_id]" class="form-control">
                                         <option value="" disabled selected>- Mata Pelajaran -</option>
                                         <?php foreach ($mata_pelajaran as $t) : ?>
@@ -483,15 +525,19 @@
 
                             <div class="row">
                                 <div class="col-4">
+                                    <label for="">Nama Kejuaraan / Prestasi</label>
                                     <input type="text" name="prestasi_akademik[<?= $i ?>][nama]" class="form-control" placeholder="Nama Kejuaraan / Prestasi" value="<?= $n['nama'] ?>">
                                 </div>
                                 <div class="col-2">
+                                    <label for="">Juara</label>
                                     <input type="text" name="prestasi_akademik[<?= $i ?>][juara]" class="form-control" placeholder="Juara" value="<?= $n['juara'] ?>">
                                 </div>
                                 <div class="col-3">
+                                    <label for="">Tingkat</label>
                                     <input type="text" name="prestasi_akademik[<?= $i ?>][tingkat]" class="form-control" placeholder="Tingkat" value="<?= $n['tingkat'] ?>">
                                 </div>
                                 <div class="col-3">
+                                    <label for="">Penyelenggara</label>
                                     <input type="text" name="prestasi_akademik[<?= $i ?>][penyelenggara]" class="form-control" placeholder="Penyelenggara" value="<?= $n['penyelenggara'] ?>">
                                 </div>
                             </div>
@@ -529,15 +575,19 @@
 
                             <div class="row">
                                 <div class="col-4">
+                                    <label for="">Nama Kejuaraan / Prestasi</label>
                                     <input type="text" name="prestasi_non_akademik[<?= $i ?>][nama]" class="form-control" placeholder="Nama Kejuaraan / Prestasi" value="<?= $n['nama'] ?>">
                                 </div>
                                 <div class="col-2">
+                                    <label for="">Juara</label>
                                     <input type="text" name="prestasi_non_akademik[<?= $i ?>][juara]" class="form-control" placeholder="Juara" value="<?= $n['juara'] ?>">
                                 </div>
                                 <div class="col-3">
+                                    <label for="">Tingkat</label>
                                     <input type="text" name="prestasi_non_akademik[<?= $i ?>][tingkat]" class="form-control" placeholder="Tingkat" value="<?= $n['tingkat'] ?>">
                                 </div>
                                 <div class="col-3">
+                                    <label for="">Penyelenggara</label>
                                     <input type="text" name="prestasi_non_akademik[<?= $i ?>][penyelenggara]" class="form-control" placeholder="Penyelenggara" value="<?= $n['penyelenggara'] ?>">
                                 </div>
                             </div>
@@ -570,10 +620,12 @@
     function tambahNilai() {
 
         var html = `<br> <div class="row">
-                            <div class="col-6">
+                            <div class="col-lg-6">
+                            <label for="">Nilai</label>
                                 <input type="text" name="siswa_nilai[${$("input[name^=siswa_nilai]").get().length+1}][nilai]" class="form-control" placeholder="Nilai">
                             </div>
-                            <div class="col-6">
+                            <div class="col-lg-6">
+                            <label for="">Mata Pelajaran</label>
                                 <select name="siswa_nilai[${$("input[name^=siswa_nilai]").get().length+1}][mata_pelajaran_id]" class="form-control">
                                     <option value="" disabled selected>- Mata Pelajaran -</option>
                                     <?php foreach ($mata_pelajaran as $t) : ?>
@@ -592,15 +644,19 @@
 
         var html = `<br> <div class="row">
                             <div class="col-4">
+                            <label for="">Nama Kejuaraan / Prestasi</label>
                                 <input type="text" name="prestasi_akademik[${$("input[name^=prestasi_akademik]").get().length+1}][nama]" class="form-control" placeholder="Nama Kejuaraan / Prestasi">
                             </div>
                             <div class="col-2">
+                            <label for="">Juara</label>
                                 <input type="text" name="prestasi_akademik[${$("input[name^=prestasi_akademik]").get().length+1}][juara]" class="form-control" placeholder="Juara">
                             </div>
                             <div class="col-3">
+                            <label for="">Tingkat</label>
                                 <input type="text" name="prestasi_akademik[${$("input[name^=prestasi_akademik]").get().length+1}][tingkat]" class="form-control" placeholder="Tingkat">
                             </div>
                             <div class="col-3">
+                            <label for="">Penyelenggara</label>
                                 <input type="text" name="prestasi_akademik[${$("input[name^=prestasi_akademik]").get().length+1}][penyelenggara]" class="form-control" placeholder="Penyelenggara">
                             </div>
                         </div>
@@ -613,21 +669,25 @@
 
         var html = `<br> <div class="row">
                             <div class="col-4">
-                                <input type="text" name="prestasi_non_akademik[${$("input[name^=prestasi_non_akademik]").get().length+1}][nama]" class="form-control" placeholder="Nama Kejuaraan / Prestasi">
+                            <label for="">Nama Kejuaraan / Prestasi</label>
+                                <input type="text" name="prestasi_akademik[${$("input[name^=prestasi_non_akademik]").get().length+1}][nama]" class="form-control" placeholder="Nama Kejuaraan / Prestasi">
                             </div>
                             <div class="col-2">
-                                <input type="text" name="prestasi_non_akademik[${$("input[name^=prestasi_non_akademik]").get().length+1}][juara]" class="form-control" placeholder="Juara">
+                            <label for="">Juara</label>
+                                <input type="text" name="prestasi_akademik[${$("input[name^=prestasi_non_akademik]").get().length+1}][juara]" class="form-control" placeholder="Juara">
                             </div>
                             <div class="col-3">
-                                <input type="text" name="prestasi_non_akademik[${$("input[name^=prestasi_non_akademik]").get().length+1}][tingkat]" class="form-control" placeholder="Tingkat">
+                            <label for="">Tingkat</label>
+                                <input type="text" name="prestasi_akademik[${$("input[name^=prestasi_non_akademik]").get().length+1}][tingkat]" class="form-control" placeholder="Tingkat">
                             </div>
                             <div class="col-3">
-                                <input type="text" name="prestasi_non_akademik[${$("input[name^=prestasi_non_akademik]").get().length+1}][penyelenggara]" class="form-control" placeholder="Penyelenggara">
+                            <label for="">Penyelenggara</label>
+                                <input type="text" name="prestasi_akademik[${$("input[name^=prestasi_non_akademik]").get().length+1}][penyelenggara]" class="form-control" placeholder="Penyelenggara">
                             </div>
                         </div>
                         `
 
-        $("#prestasi_non_akademik").append(html)
+        $("#prestasi_akademik").append(html)
     }
 </script>
 
