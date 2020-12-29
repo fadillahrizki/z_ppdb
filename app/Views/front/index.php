@@ -92,7 +92,7 @@ $site = site();
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-			<a href="#" class="btn btn-primary">Daftar Sekarang!</a>
+			<a href="<?=base_url('login')?>" class="btn btn-primary">Daftar Sekarang!</a>
 		</div>
 	</div>
 </section>
