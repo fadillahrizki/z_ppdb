@@ -27,7 +27,7 @@ $site = site();
 
 <section class="content">
     <form action="<?= base_url('/admin/siswa/') ?>" method="post" class="container-fluid">
-        <input name="siswa[status]" type="hidden" value="Tidak Lulus">
+
         <!-- Identitas -->
 
         <div class="row">
@@ -123,8 +123,12 @@ $site = site();
                                 </select>
                             </div>
                             <div class="col-lg-6">
-                                <label for="">Alamat</label>
-                                <textarea name="siswa[alamat]" rows="5" class="form-control" placeholder="Alamat Lengkap"></textarea>
+                                <label for="">Status</label>
+                                <select name="siswa[status]" class="form-control">
+                                    <option value="" disabled selected>- Pilih Status -</option>
+                                    <option value="Lulus">Lulus</option>
+                                    <option value="Tidak Lulus">Tidak Lulus</option>
+                                </select>
                             </div>
                         </div>
 
@@ -188,6 +192,10 @@ $site = site();
                         </div>
 
                         <br>
+
+                        <label for="">Alamat</label>
+                        <textarea name="siswa[alamat]" rows="5" class="form-control" placeholder="Alamat Lengkap"></textarea>
+
                     </div>
                 </div>
 

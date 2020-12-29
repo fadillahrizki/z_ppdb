@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\SiswaModel;
 use App\Models\UserModel;
+use App\Models\TahunModel;
 
 class HomeController extends BaseController
 {
@@ -31,6 +32,9 @@ class HomeController extends BaseController
 			$result = $user->where('username', $username)->where('password', $password)->find();
 
 			if (count($result)) {
+				$tahun = new TahunModel;
+				$tahun = $tahun->where('status','Aktif')->find();
+				if(count($tahun)) session()->set("tahun",$tahun);
 				session()->set("auth", $result);
 
 				return redirect()->to("admin");

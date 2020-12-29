@@ -23,6 +23,7 @@
 
 <section class="content">
     <form action="<?= base_url('/admin/siswa/') ?>" method="post" class="container-fluid">
+
         <!-- Identitas -->
 
         <div class="row">
@@ -118,8 +119,12 @@
                                 </select>
                             </div>
                             <div class="col-6">
-                                <label for="">Alamat LEngkap</label>
-                                <textarea name="siswa[alamat]" rows="5" class="form-control" placeholder="Alamat Lengkap"><?= $data['alamat'] ?></textarea>
+                                <label for="">Status</label>
+                                <select name="siswa[status]" class="form-control">
+                                    <option value="" disabled selected>- Pilih Status -</option>
+                                    <option value="Lulus" <?= $data['status'] == 'Lulus' ? 'selected' : '' ?>>Lulus</option>
+                                    <option value="Tidak Lulus" <?= $data['status'] == 'Tidak Lulus' ? 'selected' : '' ?>>Tidak Lulus</option>
+                                </select>
                             </div>
                         </div>
 
@@ -183,6 +188,8 @@
                         </div>
 
                         <br>
+                        <label for="">Alamat LEngkap</label>
+                        <textarea name="siswa[alamat]" rows="5" class="form-control" placeholder="Alamat Lengkap"><?= $data['alamat'] ?></textarea>
 
                     </div>
                 </div>
