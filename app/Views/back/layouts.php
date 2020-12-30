@@ -90,7 +90,7 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                         <li class="nav-item">
-                            <a href="/admin/" class="nav-link <?= uri_string() == 'admin' ? 'active' : '' ?>">
+                            <a href="<?= base_url('admin') ?>" class="nav-link <?= uri_string() == 'admin' ? 'active' : '' ?>">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -102,7 +102,7 @@
                         <?php if (session("auth")[0]['level'] == "admin") : ?>
 
                             <li class="nav-item">
-                                <a href="/admin/tahun" class="nav-link <?= strpos(uri_string(), 'tahun') !== false ? 'active' : '' ?>">
+                                <a href="<?= base_url('admin/tahun') ?>" class="nav-link <?= strpos(uri_string(), 'tahun') !== false ? 'active' : '' ?>">
                                     <i class="nav-icon fas fa-th"></i>
                                     <p>
                                         Manajemen Tahun
@@ -112,7 +112,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="/admin/gelombang" class="nav-link <?= strpos(uri_string(), 'gelombang') !== false ? 'active' : '' ?>">
+                                <a href="<?= base_url('admin/gelombang') ?>" class="nav-link <?= strpos(uri_string(), 'gelombang') !== false ? 'active' : '' ?>">
                                     <i class="nav-icon fas fa-bacon"></i>
                                     <p>
                                         Manajemen Gelombang
@@ -121,7 +121,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/admin/jurusan" class="nav-link <?= strpos(uri_string(), 'jurusan') !== false ? 'active' : '' ?>">
+                                <a href="<?= base_url('admin/jurusan') ?>" class="nav-link <?= strpos(uri_string(), 'jurusan') !== false ? 'active' : '' ?>">
                                     <i class="nav-icon fas fa-cogs"></i>
                                     <p>
                                         Manajemen Jurusan
@@ -130,10 +130,20 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/admin/mata-pelajaran" class="nav-link <?= strpos(uri_string(), 'mata-pelajaran') !== false ? 'active' : '' ?>">
-                                    <i class="nav-icon fas fa-book-open"></i>
+                                <a href="<?= base_url('admin/mata-pelajaran') ?>" class="nav-link <?= strpos(uri_string(), 'mata-pelajaran') !== false ? 'active' : '' ?>">
+                                    <i class="nav-icon fas fa-book"></i>
                                     <p>
                                         Manajemen Mata Pelajaran
+                                        <!-- <span class="right badge badge-danger">New</span> -->
+                                    </p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="<?= base_url('admin/kelulusan') ?>" class="nav-link <?= strpos(uri_string(), 'kelulusan') !== false ? 'active' : '' ?>">
+                                    <i class="nav-icon fas fa-book-open"></i>
+                                    <p>
+                                        Manajemen Kelulusan
                                         <!-- <span class="right badge badge-danger">New</span> -->
                                     </p>
                                 </a>
@@ -142,7 +152,7 @@
                         <?php endif ?>
 
                         <li class="nav-item">
-                            <a href="/admin/siswa" class="nav-link <?= strpos(uri_string(), 'siswa') !== false ? 'active' : '' ?>">
+                            <a href="<?= base_url('admin/siswa') ?>" class="nav-link <?= strpos(uri_string(), 'siswa') !== false ? 'active' : '' ?>">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>
                                     Manajemen Siswa

@@ -43,6 +43,12 @@ class SiswaModel extends Model
         return $this->db->table('siswa_nilai')->where('siswa_id', $id)->join('mata_pelajaran', 'mata_pelajaran.id=siswa_nilai.mata_pelajaran_id')->get()->getResultArray();
     }
 
+    public function getKelulusan()
+    {
+        $query = "select siswa.id,siswa.nama_lengkap,siswa.NIS,siswa.status,siswa.NIK,floor(avg(siswa_nilai.nilai)) as avg from siswa join siswa_nilai on siswa_nilai.siswa_id=siswa.id group by siswa.NIS";
+        return $this->db->query($query)->getResultArray();
+    }
+
     public function getPrestasiAkademik($id)
     {
         return $this->db->table('siswa_prestasi_akademik')->where('siswa_id', $id)->get()->getResultArray();

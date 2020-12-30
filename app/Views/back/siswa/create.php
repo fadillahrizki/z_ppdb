@@ -91,15 +91,6 @@ $site = site();
 
                         <div class="row">
                             <div class="col-lg-6">
-                                <label for="">Tahun</label>
-                                <select name="siswa[tahun_id]" class="form-control">
-                                    <option value="" disabled selected>- Pilih Tahun -</option>
-                                    <?php foreach ($tahun as $t) : ?>
-                                        <option value="<?= $t['id'] ?>"><?= $t['tahun'] ?></option>
-                                    <?php endforeach ?>
-                                </select>
-                            </div>
-                            <div class="col-lg-6">
                                 <label for="">Gelombang</label>
                                 <select name="siswa[gelombang_id]" class="form-control">
                                     <option value="" disabled selected>- Pilih Gelombang -</option>
@@ -108,11 +99,6 @@ $site = site();
                                     <?php endforeach ?>
                                 </select>
                             </div>
-                        </div>
-
-                        <br>
-
-                        <div class="row">
                             <div class="col-lg-6">
                                 <label for="">Jurusan</label>
                                 <select name="siswa[jurusan_id]" class="form-control">
@@ -120,14 +106,6 @@ $site = site();
                                     <?php foreach ($jurusan as $t) : ?>
                                         <option value="<?= $t['id'] ?>"><?= $t['nama'] ?></option>
                                     <?php endforeach ?>
-                                </select>
-                            </div>
-                            <div class="col-lg-6">
-                                <label for="">Status</label>
-                                <select name="siswa[status]" class="form-control">
-                                    <option value="" disabled selected>- Pilih Status -</option>
-                                    <option value="Lulus">Lulus</option>
-                                    <option value="Tidak Lulus">Tidak Lulus</option>
                                 </select>
                             </div>
                         </div>

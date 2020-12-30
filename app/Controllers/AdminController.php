@@ -584,12 +584,11 @@ class AdminController extends BaseController
 			return redirect()->to("login");
 		}
 
-		$tahun = new TahunModel();
+
 		$gelombang = new GelombangModel();
 		$jurusan = new JurusanModel();
 		$mata_pelajaran = new MataPelajaranModel();
 		$data = [
-			'tahun' => $tahun->findAll(),
 			'jurusan' => $jurusan->findAll(),
 			'gelombang' => $gelombang->findAll(),
 			'mata_pelajaran' => $mata_pelajaran->findAll(),
@@ -607,14 +606,18 @@ class AdminController extends BaseController
 		$request = $this->request;
 
 		$siswa_data = $request->getVar("siswa");
-		$siswa_data['user_id'] = 1;
+		$siswa_data['user_id'] = session("auth")[0]['id'];
 		$siswa_data['tanggal'] = date("Y-m-d H:i:s");
 
 		$siswa = new SiswaModel();
+		$tahun = new TahunModel();
 
 		$id = count($siswa->findAll()) + 1;
 
 		$siswa_data['no_pendaftaran'] = date("Y") . date("m") . date("d") . $siswa_data['jurusan_id'] . $siswa_data['gelombang_id'] . "00" . $id;
+
+		$siswa_data['tahun_id'] = $tahun->where('status', 'Aktif')->find()['id'];
+		$siswa_data['status'] = 'Menunggu Keputusan';
 
 		if ($siswa->protect(false)->insert($siswa_data)) {
 
@@ -683,7 +686,6 @@ class AdminController extends BaseController
 			return redirect()->to("login");
 		}
 
-		$tahun = new TahunModel();
 		$gelombang = new GelombangModel();
 		$jurusan = new JurusanModel();
 		$mata_pelajaran = new MataPelajaranModel();
@@ -692,7 +694,6 @@ class AdminController extends BaseController
 		$d = $siswa->find($id);
 
 		$data = [
-			'tahun' => $tahun->findAll(),
 			'jurusan' => $jurusan->findAll(),
 			'gelombang' => $gelombang->findAll(),
 			'mata_pelajaran' => $mata_pelajaran->findAll(),
@@ -741,13 +742,14 @@ class AdminController extends BaseController
 		}
 
 		$model = new SiswaModel();
+		$tahun = new TahunModel();
 
 		$request = $this->request;
 
 		$data = [
 			'id' => $request->getVar('id'),
 			'nama' => $request->getVar('nama'),
-			'tahun_id'    => $request->getVar('tahun_id'),
+			'tahun_id'    => $tahun->where('status', 'Aktif')->find()['id'],
 			'tanggal_buka'    => $request->getVar('tanggal_buka'),
 			'tanggal_tutup'    => $request->getVar('tanggal_tutup'),
 			'kuota'    => $request->getVar('kuota'),
@@ -776,5 +778,39 @@ class AdminController extends BaseController
 
 			return redirect()->to('/admin/siswa/');
 		}
+	}
+
+	function kelulusan()
+	{
+
+		if (!session()->has("auth")) {
+			return redirect()->to("login");
+		}
+
+		if (session("auth")[0]["level"] != "admin") {
+			return redirect()->to("admin");
+		}
+
+		$model = new SiswaModel();
+
+		if ($this->request->getMethod() == "post") {
+			$status = $this->request->getVar("status");
+
+			foreach ($status as $st) {
+				if ($model->protect(false)->save([
+					'id' => $st,
+					'status' => 'Lulus'
+				])) {
+					session()->setFlashdata("success", "Berhasil mengupdate kelulusan!");
+				}
+			}
+		}
+
+
+		$data = [
+			'data' => $model->getKelulusan()
+		];
+
+		return view('back/kelulusan/index', $data);
 	}
 }

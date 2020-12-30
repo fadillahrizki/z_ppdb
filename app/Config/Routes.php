@@ -63,6 +63,8 @@ $routes->group('admin', function ($routes) {
 		$routes->get('delete/(:num)', 'AdminController::jurusan_delete/$1');
 	});
 
+	$routes->match(['get', 'post'], 'kelulusan', 'AdminController::kelulusan');
+
 	$routes->group('mata-pelajaran', function ($routes) {
 		$routes->get('', 'AdminController::mata_pelajaran');
 		$routes->post('', 'AdminController::mata_pelajaran_insert');

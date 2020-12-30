@@ -87,15 +87,6 @@
 
                         <div class="row">
                             <div class="col-6">
-                                <label for="">Tahun</label>
-                                <select name="siswa[tahun_id]" class="form-control">
-                                    <option value="" disabled selected>- Pilih Tahun -</option>
-                                    <?php foreach ($tahun as $t) : ?>
-                                        <option value="<?= $t['id'] ?>" <?= $data['tahun_id'] == $t['id'] ? 'selected' : '' ?>><?= $t['tahun'] ?></option>
-                                    <?php endforeach ?>
-                                </select>
-                            </div>
-                            <div class="col-6">
                                 <label for="">Gelombang</label>
                                 <select name="siswa[gelombang_id]" class="form-control">
                                     <option value="" disabled selected>- Pilih Gelombang -</option>
@@ -104,11 +95,6 @@
                                     <?php endforeach ?>
                                 </select>
                             </div>
-                        </div>
-
-                        <br>
-
-                        <div class="row">
                             <div class="col-6">
                                 <label for="">Jurusan</label>
                                 <select name="siswa[jurusan_id]" class="form-control">
@@ -116,14 +102,6 @@
                                     <?php foreach ($jurusan as $t) : ?>
                                         <option value="<?= $t['id'] ?>" <?= $data['jurusan_id'] == $t['id'] ? 'selected' : '' ?>><?= $t['nama'] ?></option>
                                     <?php endforeach ?>
-                                </select>
-                            </div>
-                            <div class="col-6">
-                                <label for="">Status</label>
-                                <select name="siswa[status]" class="form-control">
-                                    <option value="" disabled selected>- Pilih Status -</option>
-                                    <option value="Lulus" <?= $data['status'] == 'Lulus' ? 'selected' : '' ?>>Lulus</option>
-                                    <option value="Tidak Lulus" <?= $data['status'] == 'Tidak Lulus' ? 'selected' : '' ?>>Tidak Lulus</option>
                                 </select>
                             </div>
                         </div>
