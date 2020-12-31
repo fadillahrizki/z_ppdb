@@ -25,13 +25,13 @@ $site = site();
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item home">
-                        <a class="nav-link" href="javascript:void(0)" onclick="doScrollTo('body')">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="<?= uri_string() == 'cek-pengumuman' ? '/' : 'javascript:void(0)' ?>" onclick="doScrollTo('body')">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item tingkat-sekolah">
-                        <a class="nav-link" href="javascript:void(0)" onclick="doScrollTo('#tingkat-sekolah')">Tingkat Sekolah</a>
+                        <a class="nav-link" href="<?= uri_string() == 'cek-pengumuman' ? '/' : 'javascript:void(0)' ?>" onclick="doScrollTo('#tingkat-sekolah')">Tingkat Sekolah</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">Cara Mendaftar</a>
+                        <a class="nav-link" href="<?= uri_string() == 'cek-pengumuman' ? '/' : 'javascript:void(0)' ?>">Cara Mendaftar</a>
                     </li>
                     <li class="nav-item <?= uri_string() == 'cek-pengumuman' ? 'active' : '' ?>">
                         <a class="nav-link" href="cek-pengumuman">Cek Pengumuman</a>
